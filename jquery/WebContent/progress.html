@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.wrapper{
+	width:500px;
+	magin: 0 auto;
+}
+.progress-bar{
+	width: 100%;
+	background-color: #e0e0e0;
+	padding: 3px;
+	border-radius: 3px;
+}
+.progress-bar-fill{
+	height: 22px;
+	display: block;
+	background-color: #33cc33;
+	border-radius: 3px;
+	width:0;
+	transition: width 500ms ease-in-out;
+}
+</style>
+<body>
+
+	<div class="container">
+	<br><br>
+	 <div class="progress-bar">
+	 	<span class="progress-bar-fill"></span>
+	 </div>
+
+	</div>
+
+	<script>	
+		$(document).ready(function(){
+			var size = 0;
+			var interval = setInterval(function(){
+				size = size + 1;
+				$('.progress-bar-fill').css('width', size + '%');
+					if(size >= 100)
+						{
+							clearInterval(interval);
+						}
+				}, 1000);
+			});
+			
+	</script>
+
+</body>
+</html>
